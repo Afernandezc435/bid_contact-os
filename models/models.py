@@ -254,7 +254,6 @@ class Appointments(db.Model):
             date_scheduled = self.date_scheduled
         )
 
-
 # Catalog - ID Document Type Class
 class CatalogIDDocumentTypes(db.Model):
     __tablename__ = 'catalog_id_document_types'
@@ -272,7 +271,6 @@ class CatalogIDDocumentTypes(db.Model):
             length = self.length
         )
 
-
 # Catalog - Operations Class
 class CatalogOperations(db.Model):
     __tablename__ = 'catalog_operations'
@@ -286,7 +284,6 @@ class CatalogOperations(db.Model):
             name = self.name,
             name_short = self.name_short
         )
-
 
 # Catalog - Services Class
 class CatalogServices(db.Model):
@@ -309,7 +306,6 @@ class CatalogServices(db.Model):
             duration_minutes = self.duration_minutes
         )
 
-
 # Catalog - Survey Answers Types Class
 class CatalogSurveysAnswerTypes(db.Model):
     __tablename__ = 'catalog_surveys_answer_types'
@@ -323,7 +319,6 @@ class CatalogSurveysAnswerTypes(db.Model):
             name = self.name,
             name_short = self.name_short
         )
-
 
 # Catalog - User Roles Class
 class CatalogUserRoles(db.Model):
@@ -680,4 +675,3 @@ class UserXRole(db.Model):
     datecreated = db.Column(db.DateTime, unique=False, nullable=False, index=True, default=dt.now(tz.utc))
     user = db.relationship('User', back_populates='roles')
     user_role = db.relationship('CatalogUserRoles', back_populates='users')
-

@@ -16,6 +16,7 @@ app.logger.info("** SWING_CMS ** - CONFIG: {}".format(app.config))
 
 with app.app_context():
     from views.api import api as api_view
+    from views.reports_api import reports_api as reports_view
     from views.home import home as home_view
     from views.seo import seo as seo_view
     from views.socketio import sio as sio_view
@@ -23,6 +24,9 @@ with app.app_context():
 
     # API Fetchs
     app.register_blueprint(api_view)
+
+    # API Reports
+    app.register_blueprint(reports_view)
 
     # Home
     app.register_blueprint(home_view)
